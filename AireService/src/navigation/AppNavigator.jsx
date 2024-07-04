@@ -11,7 +11,6 @@ import Loading from './../screen/Loading';
 
 import TabNavigator from './TabNavigator';
 
-
 const Stack = createStackNavigator();
 
 const AppNavigator = () => {
@@ -25,7 +24,7 @@ const AppNavigator = () => {
         <Stack.Screen name="Loading" component={Loading} options={{ headerShown: false }} />
         <Stack.Screen name="Tabs" component={TabNavigator} options={{ headerShown: false }} />
         <Stack.Screen name="Registro" component={Registro} options={{ headerShown: true }} />
-        <Stack.Screen name="Login" component={Login} options={{ headerShown: true }} />
+        <Stack.Screen name="Login" component={Login} options={{ headerShown: false }} />
       </Stack.Navigator>
     </NavigationContainer>
   )
