@@ -6,7 +6,8 @@ module.exports = {
       colors: {
         customAzul:'#19468C',
         customAzulHome:'#112F64',
-        customNotification:'#082860'
+        customNotification:'#082860',
+        customAzulClarito:'#E0ECFF'
       },
       padding: {
         'p-10p': '10%',

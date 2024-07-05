@@ -33,7 +33,7 @@ const Menu = () => {
   };
 
   const handlePressLogin = () => {
-    navigation.navigate('Login')
+    navigation.navigate('TermsAndConditions')
   }
 
   const handlePressMenu = (props) => {
@@ -41,11 +41,11 @@ const Menu = () => {
     if(props === 'Mis datos') return navigation.navigate('MisDatos');
     if(props === 'Habilidades') return navigation.navigate('Habilidades');
     if(props === 'Notificaciones') return navigation.navigate('DetailNotifications');
-    if(props === 'Views') return navigation.navigate('Login');
-    if(props === 'Terminos') return navigation.navigate('Login');
-    if(props === 'Politicas') return navigation.navigate('Login');
+    if(props === 'Views') return navigation.navigate('Views');
+    if(props === 'TermsAndConditions') return navigation.navigate('TermsAndConditions');
+    if(props === 'PrivacyPolicy') return navigation.navigate('PrivacyPolicy');
   }
-  
+
   return (
     <View className="flex-1 justify-center  bg-customAzulHome pl-5 pr-5">
       
@@ -108,7 +108,7 @@ const Menu = () => {
                       </View>
                     </TouchableOpacity>
 
-                    <TouchableOpacity className="flex-row items-center w-full bg-customAzulHome pt-4 pb-4" onPress={() => handlePressMenu('Terminos')}>
+                    <TouchableOpacity className="flex-row items-center w-full bg-customAzulHome pt-4 pb-4" onPress={() => handlePressMenu('TermsAndConditions')}>
                       <View>
                       <MaterialCommunityIcons name="file-document" size={24} color="#fff" />
                       </View>
@@ -117,12 +117,12 @@ const Menu = () => {
                       </View>
                     </TouchableOpacity>
 
-                    <TouchableOpacity className="flex-row items-center w-full bg-customAzulHome pt-4 pb-4" onPress={() => handlePressMenu('Politicas')}>
+                    <TouchableOpacity className="flex-row items-center w-full bg-customAzulHome pt-4 pb-4" onPress={() => handlePressMenu('PrivacyPolicy')}>
                       <View>
                       <MaterialCommunityIcons name="file-document" size={24} color="#fff" />
                       </View>
                       <View className="ml-4">
-                        <Text className="text-white font-sans text-lg">Politicas de privacidad</Text>
+                        <Text className="text-white font-sans text-lg">Politicas de privacidad</Text> 
                       </View>
                     </TouchableOpacity>
                 </View>

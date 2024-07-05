@@ -9,12 +9,14 @@ import FormularioRegistro from './../components/FormularioRegistro/FormularioReg
 
 const Registro = () => {
   return (
-      <View className="flex-1 bg-white justify-center items-center pl-10 pr-10">
-        <View className="justify-center items-center">
-          <Image source={logo}/>
-          <FormularioRegistro />
-        </View>
-      </View>  )
-}
+    <View className="flex-1 bg-white justify-center items-center px-2.5">
+    <View className="justify-center items-center mt-40">
+      <Image source={logo}/>
+      <FormularioRegistro />
+    </View>
+  </View>  
+  )}
 
 export default Registro;
+
+

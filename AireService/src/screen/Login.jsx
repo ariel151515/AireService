@@ -9,8 +9,8 @@ import FormularioLogin from './../components/FormularioLogin/FormularioLogin';
 
 const Login = () => {
   return (
-      <View className="flex-1 bg-white justify-center items-center pl-10 pr-10">
-        <View className="justify-center items-center">
+      <View className="flex-1 bg-white justify-center items-center px-2.5">
+        <View className="justify-center items-center mt-40">
           <Image source={logo}/>
           <FormularioLogin />
         </View>
