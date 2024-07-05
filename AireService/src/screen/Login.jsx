@@ -1,4 +1,4 @@
-import { View, Text, TextInput, TouchableOpacity, Button, StyleSheet } from 'react-native'
+import { View, Text, TextInput, TouchableOpacity, Button, StyleSheet, Image } from 'react-native'
 import React from 'react'
 
 // Imagenes
@@ -9,16 +9,12 @@ import FormularioLogin from './../components/FormularioLogin/FormularioLogin';
 
 const Login = () => {
   return (
-      <View>
-        <Image source={logo}/>
-        <FormularioLogin />
+      <View className="flex-1 bg-white justify-center items-center pl-10 pr-10">
+        <View className="justify-center items-center">
+          <Image source={logo}/>
+          <FormularioLogin />
+        </View>
       </View>  )
 }
 
 export default Login;
-
-const styles = StyleSheet.create({
-  contenedor:{
-    display: 'flex',
-  }
-})

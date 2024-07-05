@@ -4,8 +4,14 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        customAzul:'#19468C'
+        customAzul:'#19468C',
+        customAzulHome:'#112F64',
+        customNotification:'#082860'
       },
+      padding: {
+        'p-10p': '10%',
+        'p-20p': '20%'
+      }
     },
   },
   plugins: [],

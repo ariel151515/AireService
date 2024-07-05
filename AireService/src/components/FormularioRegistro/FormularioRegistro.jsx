@@ -6,22 +6,32 @@ import { useNavigation } from '@react-navigation/native';
 import { AntDesign } from '@expo/vector-icons';
 import { Feather } from '@expo/vector-icons';
 
-const FormularioLogin = () => {
+const FormularioRegistro = () => {
   const navigation = useNavigation();
 
   // Redirige a la pantalla de inicio de sesión
   const handlePressCrearCuenta = () => {
-    navigation.navigate('Registro')
+    navigation.navigate('Login')
   };
-
-   // Redirige a la pantalla de inicio de sesión
-   const handlePressEntrar = () => {
-    navigation.navigate('Tabs')
-  };
-  
 
   return (
     <View className="gap-5 mt-3">
+
+         {/* Input de Nombre*/}
+         <View className="">
+              <Text className="text-slate-500 font-sans text-xs">Nombre</Text>
+              <View className="flex-row items-center  border-b border-slate-400 pt-2 pb-2">
+              <View className="flex-row items-center gap-3">
+                <View>
+                      <AntDesign name="user" size={24} color="#64748b" />
+                  </View>
+                  <View className="w-full">
+                      <TextInput placeholder="Nombre" className="pt-2 pb-2 placeholder:text-base"/>
+                  </View>
+                </View>
+              </View>
+          </View>
+
         {/* Input de Email */}
           <View className="">
               <Text className="text-slate-500 font-sans text-xs">Email</Text>
@@ -52,15 +62,15 @@ const FormularioLogin = () => {
           </View>
           
         {/* Contenedor botones y legales*/}
-        <View className="flex-col">
-            <TouchableOpacity className="bg-customAzul items-center pt-3 pb-3 rounded-full" onPress={handlePressEntrar}>
-                <Text className="text-white font-sans text-base">Entrar</Text>
+        <View className=" flex-col">
+            <TouchableOpacity className="bg-customAzul items-center pt-3 pb-3 rounded-full">
+                <Text className="text-white font-sans text-base">Crear cuenta</Text>
             </TouchableOpacity>
 
-            <View className="bg-white items-center pt-3 pb-3 rounded-full flex-row justify-center gap-1 mt-1">
-              <Text className="text-slate-500 font-sans text-base">¿No tienes cuenta?</Text>
+            <View className="bg-white items-center pt-3 pb-3 rounded-full flex-row justify-center  gap-1 mt-1">
+              <Text className="text-slate-500 font-sans text-base">¿Ya tienes cuenta?</Text>
               <TouchableOpacity onPress={handlePressCrearCuenta}>
-                  <Text className="text-slate-500 font-sans text-base">Crear cuenta</Text>
+                  <Text className="text-slate-500 font-sans text-base">Iniciar sesión</Text>
               </TouchableOpacity>
             </View>
  
@@ -75,4 +85,4 @@ const FormularioLogin = () => {
   )
 }
 
-export default FormularioLogin;
+export default FormularioRegistro;

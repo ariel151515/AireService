@@ -2,26 +2,31 @@ import React, { useState } from 'react'
 import { View, Text, TouchableOpacity  } from 'react-native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Feather, Ionicons, MaterialCommunityIcons, FontAwesome5, MaterialIcons } from '@expo/vector-icons';
+import { AntDesign } from '@expo/vector-icons';
 
 // screen
 import Login from '../screen/Login'
 import Loading from './../screen/Loading';
+import Home from './../screen/Home';
+import Menu from './../screen/Menu';
+import Skills from './../screen/Skills';
+
 
 const Tab = createBottomTabNavigator();
 
 const TabNavigation = () => {
   
 // Usa useContext para acceder al contexto
-const [isAuthenticated, setIsAuthenticated] = useState(false);
+const [isAuthenticated, setIsAuthenticated] = useState(true);
 
   return (
     <Tab.Navigator 
         screenOptions={{
-            tabBarActiveTintColor: '#086BEF',
-            tabBarInactiveTintColor: '#ccc',
+            tabBarActiveTintColor: '#fff',
+            tabBarInactiveTintColor: '#88A2CE',
             tabBarStyle: { 
             display: 'flex', 
-            backgroundColor: '#fff',
+            backgroundColor: '#082860',
             height: '8%',
             paddingTop: 9,
             paddingBottom: 9,
@@ -33,13 +38,14 @@ const [isAuthenticated, setIsAuthenticated] = useState(false);
 
       <Tab.Screen 
            name="Home" 
-           component={isAuthenticated ? MenuScreen : Login} 
+           component={isAuthenticated ? Home : Login} 
            options={{
             tabBarIcon: ({ focused, color, size }) => (
-                <Feather 
-                    name="menu" 
-                    size={size} 
-                    color={color}/>
+                    <AntDesign 
+                        name="home" 
+                        size={size} 
+                        color={color}
+                    />
             ),
             tabBarLabel: ({ focused, color }) => (
                 <Text style={{ fontSize: 12, marginBottom:0, color: color, marginTop:0}}>
@@ -49,15 +55,15 @@ const [isAuthenticated, setIsAuthenticated] = useState(false);
           }}
        />
 
-<Tab.Screen 
-           name="Hab" 
-           component={isAuthenticated ? MenuScreen : Login} 
+    <Tab.Screen 
+           name="Habilidades" 
+           component={isAuthenticated ? Skills : Login} 
            options={{
             tabBarIcon: ({ focused, color, size }) => (
-                <Feather 
-                    name="menu" 
-                    size={size} 
-                    color={color}/>
+                <AntDesign 
+                   name="profile" 
+                   size={size}
+                   color={color} />
             ),
             tabBarLabel: ({ focused, color }) => (
                 <Text style={{ fontSize: 12, marginBottom:0, color: color, marginTop:0}}>
@@ -67,9 +73,9 @@ const [isAuthenticated, setIsAuthenticated] = useState(false);
           }}
        />
 
-<Tab.Screen 
+    <Tab.Screen 
            name="Menu" 
-           component={isAuthenticated ? MenuScreen : Login} 
+           component={isAuthenticated ? Menu : Login} 
            options={{
             tabBarIcon: ({ focused, color, size }) => (
                 <Feather 
@@ -82,9 +88,11 @@ const [isAuthenticated, setIsAuthenticated] = useState(false);
                     Menu
                 </Text>
             ),
+            tabBarStyle: ({
+                display:'none',
+              }),
           }}
        />
-
 
     </Tab.Navigator>
 

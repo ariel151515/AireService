@@ -8,6 +8,9 @@ import { createStackNavigator } from '@react-navigation/stack';
 import Login from './../screen/Login';
 import Registro from './../screen/Registro';
 import Loading from './../screen/Loading';
+import Menu from './../screen/Menu';
+import DetailNotifications from './../screen/DetailNotifications';
+import MisDatos from './../screen/InformationForm';
 
 import TabNavigator from './TabNavigator';
 
@@ -23,8 +26,10 @@ const AppNavigator = () => {
       <Stack.Navigator initialRouteName={isAuthenticated ? 'Tabs' : 'Loading'}>
         <Stack.Screen name="Loading" component={Loading} options={{ headerShown: false }} />
         <Stack.Screen name="Tabs" component={TabNavigator} options={{ headerShown: false }} />
-        <Stack.Screen name="Registro" component={Registro} options={{ headerShown: true }} />
+        <Stack.Screen name="Registro" component={Registro} options={{ headerShown: false }} />
         <Stack.Screen name="Login" component={Login} options={{ headerShown: false }} />
+        <Stack.Screen name="DetailNotifications" component={DetailNotifications} options={{ headerShown: true }} />
+        <Stack.Screen name="MisDatos" component={MisDatos} options={{ headerShown: true }} />
       </Stack.Navigator>
     </NavigationContainer>
   )
